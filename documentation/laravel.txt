@@ -1,0 +1,18 @@
+*****************************************************************
+
+composer create-project laravel/laravel modernoglamour-ecommerce
+
+php artisan serve
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+
+npm install
+npm run dev / build
+
+->Configurar el .env con la base de datos mysql = puntodeventadb.
+->Crear la base de datos en phpmyadmin.
+
+php artisan migrate
+
+*****************************************************************

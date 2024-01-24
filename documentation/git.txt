@@ -1,0 +1,10 @@
+*****************************************************************
+
+git init
+git add .
+git commit -m "Master"
+git log
+git remote add origin https://github.com/Mersmith/modernoglamour-ecommerce.git
+git push origin master
+
+*****************************************************************
