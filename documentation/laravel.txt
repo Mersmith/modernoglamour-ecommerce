@@ -16,3 +16,23 @@ npm run dev / build
 php artisan migrate
 
 *****************************************************************
+
+php artisan make:model Marca -mfsc
+php artisan make:model Color -mfsc
+
+php artisan migrate:fresh --seed
+
+php artisan migrate:fresh
+
+php artisan migrate
+
+php artisan make:model Talla -mfsc
+
+php artisan make:model Categoria -mfsc
+
+php artisan make:request CategoriaRequest
+
+dump($id);
+dd($id);
+
+*****************************************************************

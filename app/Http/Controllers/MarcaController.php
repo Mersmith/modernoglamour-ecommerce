@@ -25,7 +25,7 @@ class MarcaController extends Controller
         $marca->descripcion = $request->descripcion;
         $marca->save();
 
-        return redirect()->route('marca.vista.todas')->with('crear', 'Se creo correctamente.');
+        return redirect()->route('marca.vista.todas')->with('mensajeCrud', 'Se creo correctamente.');
     }
 
     public function vistaVer($id)
@@ -47,7 +47,7 @@ class MarcaController extends Controller
         $marca->descripcion = $request->descripcion;
         $marca->save();
 
-        return redirect()->route('marca.vista.todas')->with('editar', 'Se edito correctamente.');
+        return redirect()->route('marca.vista.todas')->with('mensajeCrud', 'Se edito correctamente.');
     }
 
     public function eliminar($id)
@@ -55,6 +55,6 @@ class MarcaController extends Controller
         $marca = Marca::find($id);
         $marca->delete();
 
-        return redirect()->route('marca.vista.todas')->with('eliminar', 'Se elimino correctamente.');
+        return redirect()->route('marca.vista.todas')->with('mensajeCrud', 'Se elimino correctamente.');
     }
 }

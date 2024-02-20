@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Color;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Marca;
 
 return new class extends Migration
 {
@@ -12,12 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('marcas', function (Blueprint $table) {
+        Schema::create('colors', function (Blueprint $table) {
             $table->id();
 
             $table->string('nombre')->unique();
-            $table->string('descripcion');
-            $table->enum('activo', [Marca::ACTIVADO, Marca::DESACTIVADO])->default(Marca::DESACTIVADO);
+            $table->enum('activo', [Color::ACTIVADO, Color::DESACTIVADO])->default(Color::DESACTIVADO);
 
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('marcas');
+        Schema::dropIfExists('colors');
     }
 };

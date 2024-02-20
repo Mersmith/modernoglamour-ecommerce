@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Categoria;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Marca;
 
 return new class extends Migration
 {
@@ -12,12 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('marcas', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
 
             $table->string('nombre')->unique();
+            $table->string('slug')->unique();
             $table->string('descripcion');
-            $table->enum('activo', [Marca::ACTIVADO, Marca::DESACTIVADO])->default(Marca::DESACTIVADO);
+            $table->string('icono')->nullable();
+            $table->string('imagen_ruta')->nullable();
+            $table->enum('activo', [Categoria::ACTIVADO, Categoria::DESACTIVADO])->default(Categoria::DESACTIVADO);
 
             $table->timestamps();
         });
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('marcas');
+        Schema::dropIfExists('categorias');
     }
 };
