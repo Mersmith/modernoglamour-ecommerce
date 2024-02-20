@@ -8,21 +8,21 @@
         @csrf
         @method('PUT')
         <p>Nombre:</p>
-        <input type="text" name="nombre" value="{{ $categoria->nombre }}">
+        <input type="text" name="nombre" value="{{ old('nombre', $categoria->nombre) }}">
         @error('nombre')
             <div>{{ $message }}</div>
         @enderror
         <br>
 
         <p>Slug:</p>
-        <input type="text" name="slug" value="{{ $categoria->slug }}">
+        <input type="text" name="slug" value="{{ old('slug', $categoria->slug) }}">
         @error('slug')
             <div>{{ $message }}</div>
         @enderror
         <br>
 
         <p>Descripción:</p>
-        <textarea name="descripcion">{{ $categoria->descripcion }}</textarea>
+        <textarea name="descripcion">{{ old('descripcion', $categoria->descripcion) }}</textarea>
         @error('descripcion')
             <div>{{ $message }}</div>
         @enderror

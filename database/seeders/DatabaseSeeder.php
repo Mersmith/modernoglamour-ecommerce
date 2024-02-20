@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ColorSeeder::class);
         $this->call(TallaSeeder::class);
         $this->call(CategoriaSeeder::class);
+        $this->call(SubcategoriaSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

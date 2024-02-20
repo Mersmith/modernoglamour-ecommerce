@@ -35,4 +35,5 @@ php artisan make:request CategoriaRequest
 dump($id);
 dd($id);
 
+php artisan make:model Subcategoria -mfsc
 *****************************************************************
