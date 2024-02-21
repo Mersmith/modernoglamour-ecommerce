@@ -13,7 +13,7 @@ class ProductoController extends Controller
 {
     public function vistaTodas()
     {
-        $productos = Producto::all();
+        $productos = Producto::simplePaginate(10);
         return view('administrador.producto.todas', compact('productos'));
     }
 

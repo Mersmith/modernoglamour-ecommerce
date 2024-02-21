@@ -14,4 +14,7 @@
             </li>
         @endforeach
     </ul>
+    <div class="pagination">
+        {{ $productos->links() }}
+    </div>
 </div>
