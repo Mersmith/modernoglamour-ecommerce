@@ -6,6 +6,7 @@ use App\Http\Requests\ProductoRequest;
 use App\Models\Marca;
 use App\Models\Producto;
 use App\Models\Subcategoria;
+use App\Models\Variacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -40,7 +41,33 @@ class ProductoController extends Controller
     public function vistaVer($id)
     {
         $producto = Producto::find($id);
-        return view('administrador.producto.ver', compact('producto'));
+        if ($producto->variacion_talla == 1 && $producto->variacion_color == 1) {
+            $tipo_variacion = "talla-color";
+            $variaciones = Variacion::where('producto_id', $producto->id)
+                ->whereNotNull('talla_id')
+                ->with('talla', 'color')
+                ->get()
+                ->groupBy('talla_id');
+        } elseif ($producto->variacion_talla == 1 && !$producto->variacion_color == 1) {
+            $tipo_variacion = "talla";
+            $variaciones = Variacion::where('producto_id', $producto->id)
+                ->whereNotNull('talla_id')
+                ->with('talla')
+                ->get()
+                ->groupBy('talla_id');
+        } elseif (!$producto->variacion_talla == 1 && $producto->variacion_color == 1) {
+            $tipo_variacion = "color";
+            $variaciones = Variacion::where('producto_id', $producto->id)
+                ->whereNotNull('color_id')
+                ->with('color')
+                ->get()
+                ->groupBy('color_id');
+        } else {
+            $tipo_variacion = "sin-variacion";
+            $variaciones = collect();
+        }
+
+        return view('administrador.producto.ver', compact('producto', 'variaciones', 'tipo_variacion'));
     }
 
     public function vistaEditar($id)

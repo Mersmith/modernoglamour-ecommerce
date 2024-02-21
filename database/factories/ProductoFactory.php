@@ -18,10 +18,10 @@ class ProductoFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {        
+    {
         $marca = Marca::all()->random();
         $subcategoria = Subcategoria::all()->random();
-        
+
         $nombre = $this->faker->sentence(2);
 
         return [
@@ -30,6 +30,8 @@ class ProductoFactory extends Factory
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $this->faker->text(),
+            'variacion_talla' => $this->faker->randomElement([true, false]),
+            'variacion_color' => $this->faker->randomElement([true, false]),
         ];
     }
 }

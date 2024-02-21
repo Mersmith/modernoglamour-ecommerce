@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Talla extends Model
+class Variacion extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre'];
-
-    const ACTIVADO = 1;
-    const DESACTIVADO = 2;
+    protected $guarded = ['id', 'created_at', 'update_at'];
 
     public function talla()
     {
         return $this->belongsTo(Talla::class, 'talla_id');
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
     }
 }

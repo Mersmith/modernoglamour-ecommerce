@@ -9,10 +9,52 @@
     <p>Slug: {{ $producto->slug }} </p>
     <p>Descripción: {{ $producto->descripcion }} </p>
 
+
     <br>
     <form action="{{ route('producto.eliminar', $producto->id) }}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit">Eliminar</button>
     </form>
+    <br>
+
+    <h2>VARIACIÓN: {{ $tipo_variacion }} </h2>
+    @if ($tipo_variacion == 'talla-color')
+        <ul>
+            @foreach ($variaciones as $tallaId => $variacionesPorTalla)
+                <li>
+                    <p>Talla: {{ $tallaId }}</p>
+                    <ul>
+                        @foreach ($variacionesPorTalla as $variacion)
+                            <li>
+                                <p>Colores: {{ $variacion->color->nombre }}</p>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+            @endforeach
+        </ul>
+    @elseif($tipo_variacion == 'talla')
+        <ul>
+            @foreach ($variaciones as $tallaId => $variacionesPorTalla)
+                <li>
+                    <p>Tallas: {{ $variacionesPorTalla->first()->talla->nombre }}</p>
+                </li>
+            @endforeach
+        </ul>
+    @elseif($tipo_variacion == 'color')
+        <ul>
+            @foreach ($variaciones as $tallaId => $variacionesPorTalla)
+                <li>
+                    <p>Colores: {{ $variacionesPorTalla->first()->color->nombre }}</p>
+                </li>
+            @endforeach
+        </ul>
+    @else
+        <ul>
+
+        </ul>
+    @endif
+
+
 </div>

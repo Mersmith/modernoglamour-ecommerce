@@ -40,3 +40,6 @@ php artisan make:model Subcategoria -mfsc
 php artisan make:model Producto -mfsc
 php artisan make:request ProductoRequest
 *****************************************************************
+
+php artisan make:model Variacion -mfsc
+php artisan make:request VariacionRequest

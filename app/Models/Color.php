@@ -12,4 +12,9 @@ class Color extends Model
 
     const ACTIVADO = 1;
     const DESACTIVADO = 2;
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
+    }
 }

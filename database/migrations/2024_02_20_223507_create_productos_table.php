@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('descripcion');
             $table->string('icono')->nullable();
             $table->string('imagen_ruta')->nullable();
+            $table->boolean('variacion_talla')->default(false);
+            $table->boolean('variacion_color')->default(false);
             $table->enum('activo', [Producto::ACTIVADO, Producto::DESACTIVADO])->default(Producto::DESACTIVADO);
 
             $table->foreign('marca_id')->references('id')->on('marcas')->onDelete('cascade');
