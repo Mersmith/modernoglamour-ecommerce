@@ -36,4 +36,7 @@ dump($id);
 dd($id);
 
 php artisan make:model Subcategoria -mfsc
+
+php artisan make:model Producto -mfsc
+php artisan make:request ProductoRequest
 *****************************************************************

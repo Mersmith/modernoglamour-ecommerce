@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ColorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\TallaController;
 
@@ -70,6 +71,16 @@ Route::controller(SubcategoriaController::class)->group(function () {
     Route::get('subcategoria/editar/{id}', 'vistaEditar')->name('subcategoria.vista.editar');
     Route::put('subcategoria/editar/{id}', 'editar')->name('subcategoria.editar');
     Route::delete('subcategoria/eliminar/{id}', 'eliminar')->name('subcategoria.eliminar');
+});
+
+Route::controller(ProductoController::class)->group(function () {
+    Route::get('producto', 'vistaTodas')->name('producto.vista.todas');
+    Route::get('producto/crear', 'vistaCrear')->name('producto.vista.crear');
+    Route::post('producto/crear', 'crear')->name('producto.crear');
+    Route::get('producto/ver/{id}', 'vistaVer')->name('producto.vista.ver');
+    Route::get('producto/editar/{id}', 'vistaEditar')->name('producto.vista.editar');
+    Route::put('producto/editar/{id}', 'editar')->name('producto.editar');
+    Route::delete('producto/eliminar/{id}', 'eliminar')->name('producto.eliminar');
 });
 
 Route::middleware([

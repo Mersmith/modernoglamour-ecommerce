@@ -51,6 +51,7 @@ class SubcategoriaController extends Controller
     {
         $subcategoria = Subcategoria::findOrFail($id);
 
+        $subcategoria->categoria_id = $request->categoria_id;
         $subcategoria->nombre = $request->nombre;
         $subcategoria->slug = Str::slug($request->slug, '-');
         $subcategoria->descripcion = $request->descripcion;
