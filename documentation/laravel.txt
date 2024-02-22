@@ -43,3 +43,6 @@ php artisan make:request ProductoRequest
 
 php artisan make:model Variacion -mfsc
 php artisan make:request VariacionRequest
+
+php artisan make:model Inventario -mfsc
+php artisan make:request InventarioRequest

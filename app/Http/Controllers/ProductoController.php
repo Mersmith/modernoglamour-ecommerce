@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductoRequest;
+use App\Models\Inventario;
 use App\Models\Marca;
 use App\Models\Producto;
 use App\Models\Subcategoria;
@@ -41,30 +42,33 @@ class ProductoController extends Controller
     public function vistaVer($id)
     {
         $producto = Producto::find($id);
-        if ($producto->variacion_talla == 1 && $producto->variacion_color == 1) {
+
+        if ($producto->variacion_talla && $producto->variacion_color) {
             $tipo_variacion = "talla-color";
             $variaciones = Variacion::where('producto_id', $producto->id)
                 ->whereNotNull('talla_id')
-                ->with('talla', 'color')
+                ->with('talla', 'color', 'inventario')
                 ->get()
                 ->groupBy('talla_id');
-        } elseif ($producto->variacion_talla == 1 && !$producto->variacion_color == 1) {
+        } elseif ($producto->variacion_talla && !$producto->variacion_color) {
             $tipo_variacion = "talla";
             $variaciones = Variacion::where('producto_id', $producto->id)
                 ->whereNotNull('talla_id')
-                ->with('talla')
+                ->with('talla', 'inventario')
                 ->get()
                 ->groupBy('talla_id');
-        } elseif (!$producto->variacion_talla == 1 && $producto->variacion_color == 1) {
+        } elseif (!$producto->variacion_talla && $producto->variacion_color) {
             $tipo_variacion = "color";
             $variaciones = Variacion::where('producto_id', $producto->id)
                 ->whereNotNull('color_id')
-                ->with('color')
+                ->with('color', 'inventario')
                 ->get()
                 ->groupBy('color_id');
         } else {
             $tipo_variacion = "sin-variacion";
-            $variaciones = collect();
+            $variaciones = Variacion::where('producto_id', $producto->id)
+                ->with('inventario')
+                ->get();
         }
 
         return view('administrador.producto.ver', compact('producto', 'variaciones', 'tipo_variacion'));

@@ -19,4 +19,9 @@ class Variacion extends Model
     {
         return $this->belongsTo(Color::class, 'color_id');
     }
+
+    public function inventario()
+    {
+        return $this->hasOne(Inventario::class, 'variacion_id');
+    }
 }

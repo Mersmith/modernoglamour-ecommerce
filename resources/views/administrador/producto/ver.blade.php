@@ -25,9 +25,10 @@
                 <li>
                     <p>Talla: {{ $tallaId }}</p>
                     <ul>
-                        @foreach ($variacionesPorTalla as $variacion)
+                        @foreach ($variacionesPorTalla as $variacionesPorColor)
                             <li>
-                                <p>Colores: {{ $variacion->color->nombre }}</p>
+                                <p>Colores: {{ $variacionesPorColor->color->nombre }}</p>
+                                <p>Stock: {{ $variacionesPorColor->inventario->stock }}</p>
                             </li>
                         @endforeach
                     </ul>
@@ -39,22 +40,27 @@
             @foreach ($variaciones as $tallaId => $variacionesPorTalla)
                 <li>
                     <p>Tallas: {{ $variacionesPorTalla->first()->talla->nombre }}</p>
+                    <p>Stock: {{ $variacionesPorTalla->first()->inventario->stock }}</p>
                 </li>
             @endforeach
         </ul>
     @elseif($tipo_variacion == 'color')
         <ul>
-            @foreach ($variaciones as $tallaId => $variacionesPorTalla)
+            @foreach ($variaciones as $colorId => $variacionesPorColor)
                 <li>
-                    <p>Colores: {{ $variacionesPorTalla->first()->color->nombre }}</p>
+                    <p>Colores: {{ $variacionesPorColor->first()->color->nombre }}</p>
+                    <p>Stock: {{ $variacionesPorColor->first()->inventario->stock }}</p>
                 </li>
             @endforeach
         </ul>
     @else
         <ul>
-
+            @foreach ($variaciones as $variacion)
+                <li>
+                    <p>Stock: {{ $variacion->inventario->stock }}</p>
+                </li>
+            @endforeach
         </ul>
     @endif
-
 
 </div>

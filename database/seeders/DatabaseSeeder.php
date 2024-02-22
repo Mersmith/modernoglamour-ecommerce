@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SubcategoriaSeeder::class);
         $this->call(ProductoSeeder::class);
         $this->call(VariacionSeeder::class);
+        $this->call(InventarioSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
