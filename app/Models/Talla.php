@@ -17,4 +17,9 @@ class Talla extends Model
     {
         return $this->belongsTo(Talla::class, 'talla_id');
     }
+
+    public function variacions()
+    {
+        return $this->hasMany(Variacion::class, 'talla_id');
+    }
 }

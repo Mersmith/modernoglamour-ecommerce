@@ -24,4 +24,9 @@ class Variacion extends Model
     {
         return $this->hasOne(Inventario::class, 'variacion_id');
     }
+
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class);
+    }
 }

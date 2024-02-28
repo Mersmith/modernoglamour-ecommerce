@@ -11,7 +11,7 @@ class InventarioRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,23 @@ class InventarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'stock' => 'required|numeric|min:0',
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'stock' => 'stock',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'stock.required' => 'No debe ser vacio.',
+            'stock.numeric' => 'Debe ser un número.',
+            'stock.min' => 'Mínimo un dígito.',
         ];
     }
 }

@@ -9,4 +9,9 @@ class Inventario extends Model
 {
     use HasFactory;
     protected $guarded = ['id', 'created_at', 'update_at'];
+
+    public function variacion()
+    {
+        return $this->belongsTo(Variacion::class);
+    }
 }

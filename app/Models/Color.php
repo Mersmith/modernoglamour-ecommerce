@@ -17,4 +17,9 @@ class Color extends Model
     {
         return $this->belongsTo(Color::class, 'color_id');
     }
+
+    public function variacions()
+    {
+        return $this->hasMany(Variacion::class, 'color_id');
+    }
 }

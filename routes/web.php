@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\InventarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\TallaController;
+use App\Http\Controllers\VariacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +83,23 @@ Route::controller(ProductoController::class)->group(function () {
     Route::get('producto/editar/{id}', 'vistaEditar')->name('producto.vista.editar');
     Route::put('producto/editar/{id}', 'editar')->name('producto.editar');
     Route::delete('producto/eliminar/{id}', 'eliminar')->name('producto.eliminar');
+});
+
+Route::controller(VariacionController::class)->group(function () {
+    Route::get('variacion', 'vistaTodas')->name('variacion.vista.todas');
+    Route::get('variacion/crear', 'vistaCrear')->name('variacion.vista.crear');
+    Route::post('variacion/crear', 'crear')->name('variacion.crear');
+    Route::get('variacion/ver/{id}', 'vistaVer')->name('variacion.vista.ver');
+    Route::get('variacion/editar/{id}', 'vistaEditar')->name('variacion.vista.editar');
+    Route::put('variacion/editar/{id}', 'editar')->name('variacion.editar');
+    Route::delete('variacion/eliminar/{id}', 'eliminar')->name('variacion.eliminar');
+});
+
+Route::controller(InventarioController::class)->group(function () {
+    Route::get('inventario', 'vistaTodas')->name('inventario.vista.todas');
+    Route::get('inventario/editar/{id}', 'vistaEditar')->name('inventario.vista.editar');
+    Route::put('inventario/editar/{id}', 'editar')->name('inventario.editar');
+    Route::delete('inventario/eliminar/{id}', 'eliminar')->name('inventario.eliminar');
 });
 
 Route::middleware([
