@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\TallaController;
 use App\Http\Controllers\VariacionController;
+use App\Livewire\Counter;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +102,8 @@ Route::controller(InventarioController::class)->group(function () {
     Route::put('inventario/editar/{id}', 'editar')->name('inventario.editar');
     Route::delete('inventario/eliminar/{id}', 'eliminar')->name('inventario.eliminar');
 });
+
+Route::get('/counter', Counter::class);
 
 Route::middleware([
     'auth:sanctum',
