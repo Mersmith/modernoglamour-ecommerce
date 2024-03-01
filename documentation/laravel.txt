@@ -46,3 +46,7 @@ php artisan make:request VariacionRequest
 
 php artisan make:model Inventario -mfsc
 php artisan make:request InventarioRequest
+*****************************************************************
+
+php artisan make:livewire Administrador/Producto
+php artisan make:livewire Administrador/ProductoCrear

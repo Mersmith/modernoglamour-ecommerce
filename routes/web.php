@@ -9,6 +9,8 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\TallaController;
 use App\Http\Controllers\VariacionController;
+use App\Livewire\Administrador\Producto;
+use App\Livewire\Administrador\ProductoCrear;
 use App\Livewire\Counter;
 
 /*
@@ -104,6 +106,7 @@ Route::controller(InventarioController::class)->group(function () {
 });
 
 Route::get('/counter', Counter::class);
+Route::get('/administrador/producto/crear', ProductoCrear::class)->name('administrador.producto.crear');
 
 Route::middleware([
     'auth:sanctum',
