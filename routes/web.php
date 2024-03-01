@@ -3,12 +3,14 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\ListaPrecioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\TallaController;
 use App\Http\Controllers\VariacionController;
+use App\Http\Controllers\VariacionListaPreciosController;
 use App\Livewire\Administrador\Producto;
 use App\Livewire\Administrador\ProductoCrear;
 use App\Livewire\Counter;
@@ -90,12 +92,6 @@ Route::controller(ProductoController::class)->group(function () {
 
 Route::controller(VariacionController::class)->group(function () {
     Route::get('variacion', 'vistaTodas')->name('variacion.vista.todas');
-    Route::get('variacion/crear', 'vistaCrear')->name('variacion.vista.crear');
-    Route::post('variacion/crear', 'crear')->name('variacion.crear');
-    Route::get('variacion/ver/{id}', 'vistaVer')->name('variacion.vista.ver');
-    Route::get('variacion/editar/{id}', 'vistaEditar')->name('variacion.vista.editar');
-    Route::put('variacion/editar/{id}', 'editar')->name('variacion.editar');
-    Route::delete('variacion/eliminar/{id}', 'eliminar')->name('variacion.eliminar');
 });
 
 Route::controller(InventarioController::class)->group(function () {
@@ -107,6 +103,21 @@ Route::controller(InventarioController::class)->group(function () {
 
 Route::get('/counter', Counter::class);
 Route::get('/administrador/producto/crear', ProductoCrear::class)->name('administrador.producto.crear');
+
+Route::controller(ListaPrecioController::class)->group(function () {
+    Route::get('lista-precio', 'vistaTodas')->name('lista.precio.vista.todas');
+    Route::get('lista-precio/crear', 'vistaCrear')->name('lista.precio.vista.crear');
+    Route::post('lista-precio/crear', 'crear')->name('lista.precio.crear');
+    Route::get('lista-precio/ver/{id}', 'vistaVer')->name('lista.precio.vista.ver');
+    Route::get('lista-precio/editar/{id}', 'vistaEditar')->name('lista.precio.vista.editar');
+    Route::put('lista-precio/editar/{id}', 'editar')->name('lista.precio.editar');
+    Route::delete('lista-precio/eliminar/{id}', 'eliminar')->name('lista.precio.eliminar');
+});
+
+Route::controller(VariacionListaPreciosController::class)->group(function () {
+    Route::get('variacion-lista-precio/crear/{id}', 'vistaCrear')->name('variacion.lista.precio.vista.crear');
+    Route::post('variacion-lista-precio/crear/{id}', 'crear')->name('variacion.lista.precio.crear');
+});
 
 Route::middleware([
     'auth:sanctum',

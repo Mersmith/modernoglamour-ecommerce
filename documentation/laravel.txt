@@ -50,3 +50,7 @@ php artisan make:request InventarioRequest
 
 php artisan make:livewire Administrador/Producto
 php artisan make:livewire Administrador/ProductoCrear
+
+php artisan make:model ListaPrecio -mfsc
+
+php artisan make:model VariacionListaPrecios -mfsc

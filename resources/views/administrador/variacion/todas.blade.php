@@ -1,6 +1,5 @@
 <div>
     <h2>TODAS VARIACION PRODUCTOS</h2>
-    <a href="{{ route('variacion.vista.crear') }}">Crear</a>
     <br>
     @if (session('mensajeCrud'))
         <h6>{{ session('mensajeCrud') }}</h6>
@@ -18,7 +17,7 @@
                 @else
                 @endif             
                 <a href="{{ route('producto.vista.ver', $item->producto->id) }}">Ver</a>
-                <a href="{{ route('variacion.vista.editar', $item->id) }}">Editar</a>
+                <a href="{{ route('variacion.lista.precio.vista.crear', $item->id) }}">Crear lista precio</a>
             </li>
         @endforeach
     </ul>

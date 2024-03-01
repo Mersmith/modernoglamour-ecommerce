@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Variacion extends Model
 {
     use HasFactory;
+    protected $table = 'variacions';
     protected $guarded = ['id', 'created_at', 'update_at'];
 
     public function talla()
@@ -28,5 +29,12 @@ class Variacion extends Model
     public function producto()
     {
         return $this->belongsTo(Producto::class);
+    }
+
+    public function precios()
+    {
+        return $this->belongsToMany(ListaPrecio::class, 'variacion_lista_precios', 'variacion_id', 'lista_precio_id')
+                    ->withPivot('precio')
+                    ->withTimestamps();
     }
 }
