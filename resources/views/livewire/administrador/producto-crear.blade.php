@@ -33,18 +33,18 @@
         <h3>Variación</h3>
         <div>
             <p>¿Tiene talla?</p>
-            <input type="checkbox" wire:model.live="tieneTalla">
+            <input type="checkbox" wire:model.live="variacion_talla">
         </div>
 
         <div>
             <p>¿Tiene color?</p>
-            <input type="checkbox" wire:model.live="tieneColor">
+            <input type="checkbox" wire:model.live="variacion_color">
         </div>
     </div>
 
-    @if ($tieneTalla && $tieneColor)
+    @if ($variacion_talla && $variacion_color)
         <!-- VARIACION TALLA Y COLOR -->
-        <div x-show="$wire.tieneTalla">
+        <div x-show="$wire.variacion_talla">
             <label for="selectTalla">Seleccione una talla:</label>
             <select id="selectTalla" wire:model="talla_id">
                 <option value="" selected disabled>Seleccione</option>
@@ -56,7 +56,7 @@
             </select>
         </div>
 
-        <div x-show="$wire.tieneColor">
+        <div x-show="$wire.variacion_color">
             <label for="selectColor">Seleccione un color:</label>
             <select id="selectColor" wire:model="color_id">
                 <option value="" selected disabled>Seleccione</option>
@@ -67,9 +67,9 @@
                 @endif
             </select>
         </div>
-    @elseif($tieneTalla && !$tieneColor)
+    @elseif($variacion_talla && !$variacion_color)
         <!-- VARIACION TALLA -->
-        <div x-show="$wire.tieneTalla">
+        <div x-show="$wire.variacion_talla">
             <label for="selectTalla">Seleccione una talla:</label>
             <select id="selectTalla" wire:model="talla_id">
                 <option value="" selected disabled>Seleccione</option>
@@ -80,9 +80,9 @@
                 @endif
             </select>
         </div>
-    @elseif(!$tieneTalla && $tieneColor)
+    @elseif(!$variacion_talla && $variacion_color)
         <!-- VARIACION COLOR -->
-        <div x-show="$wire.tieneColor">
+        <div x-show="$wire.variacion_color">
             <label for="selectColor">Seleccione un color:</label>
             <select id="selectColor" wire:model="color_id">
                 <option value="" selected disabled>Seleccione</option>
@@ -106,11 +106,11 @@
             <table>
                 <thead>
                     <tr>
-                        @if ($tieneTalla)
+                        @if ($variacion_talla)
                             <th>Talla</th>
                         @endif
 
-                        @if ($tieneColor)
+                        @if ($variacion_color)
                             <th>Color</th>
                         @endif
 
@@ -120,9 +120,9 @@
                 <tbody>
                     @foreach ($variaciones as $index => $variacion)
                         <tr>
-                            @if ($tieneTalla)
+                            @if ($variacion_talla)
                                 <td>
-                                    @if ($tieneTalla)
+                                    @if ($variacion_talla)
                                         <select wire:model="variaciones.{{ $index }}.talla_id">
                                             <option value="" selected disabled>Seleccione</option>
                                             @foreach ($tallas as $t)
@@ -133,9 +133,9 @@
                                 </td>
                             @endif
 
-                            @if ($tieneColor)
+                            @if ($variacion_color)
                                 <td>
-                                    @if ($tieneColor)
+                                    @if ($variacion_color)
                                         <select wire:model="variaciones.{{ $index }}.color_id">
                                             <option value="" selected disabled>Seleccione</option>
                                             @foreach ($colores as $c)
@@ -158,7 +158,7 @@
 
     </div>
 
-    @if ($tieneTalla || $tieneColor)
+    @if ($variacion_talla || $variacion_color)
         <div>
             <button wire:click="agregarVariacion">Agregar variación</button>
         </div>

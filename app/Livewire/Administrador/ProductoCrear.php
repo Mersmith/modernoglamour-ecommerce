@@ -13,24 +13,22 @@ use Livewire\Component;
 
 class ProductoCrear extends Component
 {
+    public $subcategorias = [], $marcas = [];
+
     public $subcategoria_id = "";
     public $marca_id = "";
     public $nombre = null;
     public $slug = null;
     public $descripcion = null;
-
-    public $subcategorias = [], $marcas = [];
-
-    public $tieneTalla = false;
-    public $tieneColor = false;
-
-    public $stock = 0;
+    public $variacion_talla = false;
+    public $variacion_color = false;
+  
     public $talla_id = "";
     public $color_id = "";
-
+    public $stock = 0;    
+    
     public $tallas = [];
     public $colores = [];
-
     public $variaciones = [];
 
     public function mount()
@@ -39,7 +37,7 @@ class ProductoCrear extends Component
         $this->marcas = Marca::all();
     }
 
-    public function updatedTieneTalla($value)
+    public function updatedVariacionTalla($value)
     {
         $this->variaciones = [];
 
@@ -50,7 +48,7 @@ class ProductoCrear extends Component
         $this->resetVariationInputs();
     }
 
-    public function updatedTieneColor($value)
+    public function updatedVariacionColor($value)
     {
         $this->variaciones = [];
 
@@ -66,11 +64,11 @@ class ProductoCrear extends Component
         if ($this->talla_id || $this->color_id) {
             $variacion = [];
 
-            if ($this->tieneTalla) {
+            if ($this->variacion_talla) {
                 $variacion['talla_id'] = $this->talla_id;
             }
 
-            if ($this->tieneColor) {
+            if ($this->variacion_color) {
                 $variacion['color_id'] = $this->color_id;
             }
 
@@ -93,6 +91,8 @@ class ProductoCrear extends Component
         $producto_nuevo->nombre = $this->nombre;
         $producto_nuevo->slug = $this->slug;
         $producto_nuevo->descripcion = $this->descripcion;
+        $producto_nuevo->variacion_talla = $this->variacion_talla;
+        $producto_nuevo->variacion_color = $this->variacion_color;
         $producto_nuevo->save();
 
         if (empty($this->variaciones)) {
@@ -124,19 +124,19 @@ class ProductoCrear extends Component
 
     protected function existeVariacion($variacion)
     {
-        if ($this->tieneTalla && !$this->tieneColor) {
+        if ($this->variacion_talla && !$this->variacion_color) {
             foreach ($this->variaciones as $v) {
                 if ($v['talla_id'] == $variacion['talla_id']) {
                     return true;
                 }
             }
-        } elseif (!$this->tieneTalla && $this->tieneColor) {
+        } elseif (!$this->variacion_talla && $this->variacion_color) {
             foreach ($this->variaciones as $v) {
                 if ($v['color_id'] == $variacion['color_id']) {
                     return true;
                 }
             }
-        } elseif ($this->tieneTalla && $this->tieneColor) {
+        } elseif ($this->variacion_talla && $this->variacion_color) {
             foreach ($this->variaciones as $v) {
                 if ($v['talla_id'] == $variacion['talla_id'] && $v['color_id'] == $variacion['color_id']) {
                     return true;

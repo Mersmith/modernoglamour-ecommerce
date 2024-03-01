@@ -41,6 +41,9 @@ class ProductoController extends Controller
 
     public function vistaVer($id)
     {
+        $producto = Producto::with('variacions.inventario')->find($id);
+
+        //dd($producto);
         $producto = Producto::find($id);
 
         if ($producto->variacion_talla && $producto->variacion_color) {
