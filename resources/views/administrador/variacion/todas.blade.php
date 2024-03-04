@@ -10,12 +10,10 @@
                 <span>{{ $item->producto->nombre }}</span>
                 @if ($item->talla)
                     <span>Talla: {{ $item->talla->nombre }}</span>
-                @else
                 @endif
                 @if ($item->color)
                     <span>Color: {{ $item->color->nombre }}</span>
-                @else
-                @endif             
+                @endif
                 <a href="{{ route('producto.vista.ver', $item->producto->id) }}">Ver</a>
                 <a href="{{ route('variacion.lista.precio.vista.crear', $item->id) }}">Crear lista precio</a>
             </li>

@@ -7,12 +7,14 @@ use App\Http\Controllers\ListaPrecioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\RequerimientoController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\TallaController;
 use App\Http\Controllers\VariacionController;
 use App\Http\Controllers\VariacionListaPreciosController;
 use App\Livewire\Administrador\Producto;
 use App\Livewire\Administrador\ProductoCrear;
+use App\Livewire\Administrador\RequerimientoCrear;
 use App\Livewire\Counter;
 
 /*
@@ -118,6 +120,19 @@ Route::controller(VariacionListaPreciosController::class)->group(function () {
     Route::get('variacion-lista-precio/crear/{id}', 'vistaCrear')->name('variacion.lista.precio.vista.crear');
     Route::post('variacion-lista-precio/crear/{id}', 'crear')->name('variacion.lista.precio.crear');
 });
+
+Route::controller(RequerimientoController::class)->group(function () {
+    Route::get('requerimiento', 'vistaTodas')->name('requerimiento.vista.todas');
+    Route::get('requerimiento/crear', 'vistaCrear')->name('requerimiento.vista.crear');
+    Route::post('requerimiento/crear', 'crear')->name('requerimiento.crear');
+    Route::get('requerimiento/ver/{id}', 'vistaVer')->name('requerimiento.vista.ver');
+    Route::get('requerimiento/editar/{id}', 'vistaEditar')->name('requerimiento.vista.editar');
+    Route::put('requerimiento/editar/{id}', 'editar')->name('requerimiento.editar');
+    Route::delete('requerimiento/eliminar/{id}', 'eliminar')->name('requerimiento.eliminar');
+    Route::put('requerimiento/aprobar/{id}', 'aprobar')->name('requerimiento.aprobar');
+});
+
+Route::get('/administrador/requerimiento/crear', RequerimientoCrear::class)->name('administrador.requerimiento.crear');
 
 Route::middleware([
     'auth:sanctum',
