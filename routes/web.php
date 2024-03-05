@@ -118,7 +118,7 @@ Route::controller(ListaPrecioController::class)->group(function () {
 
 Route::controller(VariacionListaPreciosController::class)->group(function () {
     Route::get('variacion-lista-precio/crear/{id}', 'vistaCrear')->name('variacion.lista.precio.vista.crear');
-    Route::post('variacion-lista-precio/crear/{id}', 'crear')->name('variacion.lista.precio.crear');
+    Route::put('variacion-lista-precio/crear/{id}', 'crear')->name('variacion.lista.precio.crear');
 });
 
 Route::controller(RequerimientoController::class)->group(function () {

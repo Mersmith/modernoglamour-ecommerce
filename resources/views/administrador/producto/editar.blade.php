@@ -6,6 +6,7 @@
     <br>
     <form action="{{ route('producto.editar', $producto->id) }}" method="POST">
         @csrf
+        @method('PUT')
 
         <p>Subcategorias:</p>
         <select name="subcategoria_id">
@@ -33,7 +34,6 @@
         @enderror
         <br>
 
-        @method('PUT')
         <p>Nombre:</p>
         <input type="text" name="nombre" value="{{ old('nombre', $producto->nombre) }}">
         @error('nombre')
