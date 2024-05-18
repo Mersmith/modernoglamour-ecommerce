@@ -15,7 +15,7 @@
                     <span>Color: {{ $item->color->nombre }}</span>
                 @endif
                 <a href="{{ route('producto.vista.ver', $item->producto->id) }}">Ver</a>
-                <a href="{{ route('variacion.lista.precio.vista.crear', $item->id) }}">Crear lista precio</a>
+                <a href="{{ route('variacion.lista.precio.vista.crear', $item->id) }}">Editar lista precio</a>
             </li>
         @endforeach
     </ul>

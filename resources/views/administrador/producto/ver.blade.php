@@ -25,10 +25,16 @@
                 <li>
                     <p>Talla: {{ $tallaId }}</p>
                     <ul>
-                        @foreach ($variacionesPorTalla as $variacionesPorColor)
+                        @foreach ($variacionesPorTalla as $variacion)
                             <li>
-                                <p>Colores: {{ $variacionesPorColor->color->nombre }}</p>
-                                <p>Stock: {{ $variacionesPorColor->inventario->stock }}</p>
+                                <p>Color: {{ $variacion->color->nombre }}</p>
+                                <p>Stock: {{ $variacion->inventario->stock }}</p>
+                                <h4>Lista de Precios</h4>
+                                <ul>
+                                    @foreach ($variacion->precios as $listaPrecio)
+                                        <li>{{ $listaPrecio->nombre }}: ${{ $listaPrecio->pivot->precio }}</li>
+                                    @endforeach
+                                </ul>
                             </li>
                         @endforeach
                     </ul>
@@ -41,6 +47,14 @@
                 <li>
                     <p>Tallas: {{ $variacionesPorTalla->first()->talla->nombre }}</p>
                     <p>Stock: {{ $variacionesPorTalla->first()->inventario->stock }}</p>
+                    <h4>Lista de Precios</h4>
+                    <ul>
+                        @foreach ($variacionesPorTalla as $variacion)
+                            @foreach ($variacion->precios as $listaPrecio)
+                                <li>{{ $listaPrecio->nombre }}: ${{ $listaPrecio->pivot->precio }}</li>
+                            @endforeach
+                        @endforeach
+                    </ul>
                 </li>
             @endforeach
         </ul>
@@ -50,6 +64,13 @@
                 <li>
                     <p>Colores: {{ $variacionesPorColor->first()->color->nombre }}</p>
                     <p>Stock: {{ $variacionesPorColor->first()->inventario->stock }}</p>
+                    <ul>
+                        @foreach ($variacionesPorColor as $variacion)
+                            @foreach ($variacion->precios as $listaPrecio)
+                                <li>{{ $listaPrecio->nombre }}: ${{ $listaPrecio->pivot->precio }}</li>
+                            @endforeach
+                        @endforeach
+                    </ul>
                 </li>
             @endforeach
         </ul>
@@ -58,6 +79,12 @@
             @foreach ($variaciones as $variacion)
                 <li>
                     <p>Stock: {{ $variacion->inventario->stock }}</p>
+                    <h4>Lista de Precios</h4>
+                    <ul>
+                        @foreach ($variacion->precios as $listaPrecio)
+                            <li>{{ $listaPrecio->nombre }}: ${{ $listaPrecio->pivot->precio }}</li>
+                        @endforeach
+                    </ul>
                 </li>
             @endforeach
         </ul>

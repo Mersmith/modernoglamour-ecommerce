@@ -57,6 +57,8 @@ class RequerimientoCrear extends Component
                 $requerimiento_detalle_nuevo->cantidad  = $item['cantidad'];
                 $requerimiento_detalle_nuevo->save();
             }
+
+            return redirect()->route('requerimiento.vista.todas');
         }
     }
 

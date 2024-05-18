@@ -17,7 +17,7 @@ class MarcaFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => $this->faker->word(),
+            //'nombre' => $this->faker->word(),
             'descripcion' => $this->faker->text(),
         ];
     }

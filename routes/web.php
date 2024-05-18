@@ -103,7 +103,7 @@ Route::controller(InventarioController::class)->group(function () {
     Route::delete('inventario/eliminar/{id}', 'eliminar')->name('inventario.eliminar');
 });
 
-Route::get('/counter', Counter::class);
+//Route::get('/counter', Counter::class);
 Route::get('/administrador/producto/crear', ProductoCrear::class)->name('administrador.producto.crear');
 
 Route::controller(ListaPrecioController::class)->group(function () {
