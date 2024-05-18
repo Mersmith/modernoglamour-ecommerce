@@ -28,8 +28,27 @@ use App\Livewire\Counter;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//http://erp.modernoglamour.local
+Route::domain('erp.modernoglamour.local')->group(function () {
+    Route::get('/', function () {
+        return 'ERP';
+    });
+    // Más rutas para erp
+});
+
+//http://punto.modernoglamour.local
+Route::domain('punto.modernoglamour.local')->group(function () {
+    Route::get('/', function () {
+        return 'PUNTO DE VENTA';
+    });
+    // Más rutas para punto
+});
+
+//http://modernoglamour.local
+Route::domain('modernoglamour.local')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });    
 });
 
 Route::controller(MarcaController::class)->group(function () {
