@@ -60,3 +60,9 @@ php artisan make:model Requerimiento -mfsc
 php artisan make:model RequerimientoDetalle -mfsc
 
 php artisan make:livewire Administrador/RequerimientoCrear
+
+php artisan make:livewire Erp/Menu/MenuPrincipal
+php artisan make:livewire Punto/Menu/MenuPrincipal
+
+php artisan make:controller Erp/Inicio/InicioController
+php artisan make:controller Punto/Inicio/InicioController

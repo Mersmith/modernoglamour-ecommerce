@@ -47,8 +47,8 @@ Route::domain('punto.modernoglamour.local')->group(function () {
 //http://modernoglamour.local
 Route::domain('modernoglamour.local')->group(function () {
     Route::get('/', function () {
-        return view('welcome');
-    });    
+        return 'PUBLICO';
+    });
 });
 
 Route::controller(MarcaController::class)->group(function () {

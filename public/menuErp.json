@@ -1,0 +1,142 @@
+[
+    {
+        "id": 0,
+        "nombrePrincipal": "Roles 1",
+        "nombrePrincipalUrl": "#",
+        "iconoPrincipal": "fa-solid fa-user-gear",
+        "subMenu1": [
+            {
+                "id": 1,
+                "nombreSubMenu1": "Lista 2",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-table-list",
+                "subMenu2": []
+            },
+            {
+                "id": 2,
+                "nombreSubMenu1": "Nuevo 2",
+                "nombreSubMenu1Url": "#",
+                "iconoSubMenu1": "fa-solid fa-square-plus",
+                "subMenu2": [
+                    {
+                        "id": 1,
+                        "nombreSubMenu2": "Lista 3",
+                        "nombreSubMenu2Url": "erp.inicio",
+                        "iconoSubMenu2": "fa-solid fa-table-list",
+                        "subMenu3": []
+                    },
+                    {
+                        "id": 2,
+                        "nombreSubMenu2": "Nuevo 3",
+                        "nombreSubMenu2Url": "erp.inicio",
+                        "iconoSubMenu2": "fa-solid fa-square-plus",
+                        "subMenu3": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "nombrePrincipal": "Usuarios",
+        "nombrePrincipalUrl": "#",
+        "iconoPrincipal": "fa-solid fa-users",
+        "subMenu1": [
+            {
+                "id": 1,
+                "nombreSubMenu1": "Lista",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-table-list",
+                "subMenu2": []
+            },
+            {
+                "id": 2,
+                "nombreSubMenu1": "Nuevo",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-square-plus",
+                "subMenu2": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombrePrincipal": "Administradores",
+        "nombrePrincipalUrl": "#",
+        "iconoPrincipal": "fa-solid fa-user-lock",
+        "subMenu1": [
+            {
+                "id": 1,
+                "nombreSubMenu1": "Lista",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-table-list",
+                "subMenu2": []
+            },
+            {
+                "id": 2,
+                "nombreSubMenu1": "Nuevo",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-square-plus",
+                "subMenu2": []
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombrePrincipal": "Socios",
+        "nombrePrincipalUrl": "#",
+        "iconoPrincipal": "fa-solid fa-building-user",
+        "subMenu1": [
+            {
+                "id": 1,
+                "nombreSubMenu1": "Lista",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-table-list",
+                "subMenu2": []
+            },
+            {
+                "id": 2,
+                "nombreSubMenu1": "Nuevo",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-square-plus",
+                "subMenu2": []
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombrePrincipal": "Elecciones",
+        "nombrePrincipalUrl": "#",
+        "iconoPrincipal": "fa-solid fa-elevator",
+        "subMenu1": [
+            {
+                "id": 1,
+                "nombreSubMenu1": "Lista",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-table-list",
+                "subMenu2": []
+            },
+            {
+                "id": 2,
+                "nombreSubMenu1": "Nuevo",
+                "nombreSubMenu1Url": "erp.inicio",
+                "iconoSubMenu1": "fa-solid fa-square-plus",
+                "subMenu2": []
+            },
+            {
+                "id": 3,
+                "nombreSubMenu1": "Estadística",
+                "nombreSubMenu1Url": "#",
+                "iconoSubMenu1": "fa-solid fa-chart-simple",
+                "subMenu2": [
+                    {
+                        "id": 1,
+                        "nombreSubMenu2": "Resultados",
+                        "nombreSubMenu2Url": "erp.inicio",
+                        "iconoSubMenu2": "fa-solid fa-square-poll-vertical",
+                        "subMenu3": []
+                    }
+                ]
+            }
+        ]
+    }
+]
