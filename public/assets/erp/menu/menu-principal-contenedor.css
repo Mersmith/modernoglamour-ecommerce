@@ -14,11 +14,9 @@
 /*ELEMENTOS MENU PRINCIPAL*/
 .navbar .menu_principal .elementos_menu_principal {
     align-items: center;
-    width: 100%;
+    width: var(--menu-ancho-sidebar);
     height: auto;
     flex-direction: column;
-    padding: 0 14px;
-    padding-left: 10px;
 }
 
 /*MENU ÍCONO*/
@@ -26,31 +24,41 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    width: 100%;
+    padding: 0 14px;
+    padding-left: 10px;
     justify-content: space-between;
+}
+
+.sidebar_logo{
+    height: var(--menu-altura-sidebar-cabecera);
+}
+
+.navbar .contenedor_menu_link .menu_principal .menu_icono:hover {
+    background: var(--menu-color-cuaternario);
+    color: var(--menu-color-primario);
 }
 
 /*ESTILOS ETIQUETA A*/
 .navbar .menu_principal .elementos_menu_principal a {
     text-decoration: none;
     white-space: nowrap;
-    color: white;
+    color: var(--menu-color-secundario);
     font-size: 14px;
 }
 
 .navbar .menu_principal .elementos_menu_principal a:hover {
-    color: #02d375;
+    color: var(--menu-color-primario);
 }
 
 .navbar .menu_principal .elementos_menu_principal a i {
-    color: #02d375;
+    color: var(--menu-color-secundario);
     margin-right: 2px;
     font-size: 20px;
 }
 
 .navbar .menu_principal .abajo_menu {
     font-size: 18px;
-    color: #02d375;
+    color: var(--menu-color-secundario);
     margin-bottom: 10px;
 }
 
@@ -60,9 +68,7 @@
     position: unset;
     top: 100px;
     left: 0;
-    background: #009b54;
     z-index: 2;
-    width: 100%;
     padding-left: 15px;
 }
 
@@ -76,9 +82,7 @@
     position: unset;
     top: 100px;
     left: 0;
-    background: #009b54;
     z-index: 2;
-    width: 100%;
     padding-left: 15px;
 }
 

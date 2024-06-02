@@ -4,7 +4,7 @@
     <nav class="navbar">
         <!-- HAMBURGUESA -->
         <div x-on:click="toggleSidebar" class="contenedor_hamburguesa">
-            <i class="fa-solid fa-bars" style="color: #666666;"></i>
+            <i class="fa-solid fa-bars"></i>
         </div>
         <!-- LOGO -->
         <div class="contenedor_logo">
@@ -20,7 +20,7 @@
                 justify-content: center;">
                     <img src="{{ asset('imagenes/empresa/logo.png') }}" alt="" />
                 </a>
-                <i x-on:click="cerrarSidebar" style="cursor: pointer; color: #666666;" class="fa-solid fa-xmark"></i>
+                <i x-on:click="cerrarSidebar" style="cursor: pointer;" class="fa-solid fa-xmark"></i>
             </div>
             <hr>
             <div class="contenedor_administrador_sidebar">
@@ -44,9 +44,9 @@
             <!-- FIN MENU-PRINCIPAL -->
         </div>
         <!-- ICONOS -->
-        <div class="contenedor_iconos">
+        <!--<div class="contenedor_iconos">
             <i class="fa-solid fa-heart" style="color: #ffa03d;"></i>
-        </div>
+        </div> -->
     </nav>
 
 </header>

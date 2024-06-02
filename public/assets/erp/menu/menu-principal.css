@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+    box-shadow: var(--menu-sombra);
     z-index: 50;
 }
 
@@ -14,7 +14,6 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: white;
     z-index: 99;
 }
 
@@ -24,12 +23,13 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: white;
+    background: var(--menu-fondo-color-base-logo);
 }
 
 .navbar .contenedor_menu_link .sidebar_logo i {
     font-size: 30px;
     display: none;
+    color: var(--menu-color-terciario);
 }
 
 .navbar .contenedor_menu_link .sidebar_logo img:first-child {
@@ -53,21 +53,21 @@ nav {
 
 .contenedor_administrador_sidebar p {
     font-size: 14px;
-    color: white;
+    color: var(--menu-color-primario);
 }
 
 .contenedor_administrador_sidebar a {
-    background-color: white;
+    background: var(--menu-color-secundario);
     font-weight: bold;
     font-size: 12px;
-    color: #808080;
+    color: var(--menu-color-terciario);
     border-radius: 50px;
     padding: 2px 8px;
 }
 
 .contenedor_administrador_sidebar a:hover {
-    background-color: #02b563;
-    color: white;
+    background: var(--menu-color-cuaternario);
+    color: var(--menu-color-primario);
 }
 
 /*CONTENEDOR HAMBURGUESA*/
@@ -78,6 +78,7 @@ nav {
     align-items: center;
     cursor: pointer;
     display: none;
+    color: var(--menu-color-secundario);
 }
 
 .contenedor_hamburguesa i {
@@ -105,17 +106,17 @@ nav {
     top: 0;
     left: 0;
     display: block;
-    max-width: 200px;
+    max-width: var(--menu-ancho-sidebar);
     width: 100%;
-    background: #009b54;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: var(--menu-color-terciario);
+    box-shadow: var(--menu-sombra);
     transition: all 0.5s ease;
     z-index: 1000;
     height: 100vh;
 }
 
 .navbar hr {
-    border-color: #02b563;
+    border-color: var(--menu-color-cuaternario);
 }
 
 .contenedor_menu_link::-webkit-scrollbar {
@@ -136,16 +137,16 @@ nav {
     cursor: pointer;
 }
 
-
 @media (max-width: 900px) {
     .navbar {
         display: grid;
         width: 100%;
         max-width: 100%;
         grid-template-areas: "contenedor_logo contenedor_iconos contenedor_hamburguesa";
-        grid-template-rows: 110px;
+        grid-template-rows: var(--menu-altura-sidebar-cabecera);
         grid-template-columns: 150px 1fr 50px;
-        height: 110px;
+        /*height: var(--menu-altura-sidebar-cabecera);*/
+        background: var(--menu-color-terciario);
     }
 
     .contenedor_hamburguesa {
@@ -154,11 +155,16 @@ nav {
 
     .contenedor_logo {
         display: flex;
+        background: var(--menu-fondo-color-base-logo);
     }
 
-    .contenedor_iconos {
-        border-bottom: 1px solid rgba(129, 129, 129, 0.2);
+    .navbar .contenedor_menu_link .sidebar_logo{
+        display: none;
     }
+
+    /*.contenedor_iconos {
+        border-bottom: 1px solid rgba(129, 129, 129, 0.2);
+    }*/
 
     .navbar .contenedor_menu_link {
         left: -100%;

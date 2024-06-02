@@ -1,0 +1,16 @@
+:root {
+
+    --menu-ancho-sidebar: 200px;
+    --menu-altura-sidebar-cabecera: 100px;
+
+    --menu-fondo-color-base-logo: white;
+
+    --menu-sombra: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+    --menu-color-primario: white;
+    --menu-color-secundario: #7d8fa9;
+    --menu-color-terciario: #1d232c;
+    --menu-color-cuaternario: black;
+    /*--menu-color-cuaternario: #161b21;*/
+
+}
