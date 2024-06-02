@@ -1,4 +1,4 @@
-<header class="contenedor_navbar" x-data="sidebar" x-on:click.away="cerrarSidebar()"
+<header class="contenedor_navbar" x-data="dataSidebar" x-on:click.away="cerrarSidebar()"
     @resize.window="abiertoSidebar = false > 900">
 
     <nav class="navbar">
@@ -62,14 +62,14 @@
             }
         })
 
-        function sidebar() {
+        function dataSidebar() {
             return {
-                seleccionado: null,
-                seleccionar(id) {
-                    if (this.seleccionado == id) {
-                        this.seleccionado = null;
+                seleccionadoPrincipal: null,
+                seleccionarPrincipal(id) {
+                    if (this.seleccionadoPrincipal == id) {
+                        this.seleccionadoPrincipal = null;
                     } else {
-                        this.seleccionado = id;
+                        this.seleccionadoPrincipal = id;
                     }
                 },
                 abiertoSidebar: false,
@@ -100,7 +100,7 @@
             }
         }
 
-        function subMenu1() {
+        function dataPrincipal() {
             return {
                 seleccionadoSubMenu1: null,
                 seleccionarSubMenu1(id) {
@@ -113,7 +113,7 @@
             }
         }
 
-        function subMenu2() {
+        function dataSubMenu1() {
             return {
                 seleccionadoSubMenu2: null,
                 seleccionarSubMenu2(id) {
@@ -126,7 +126,7 @@
             }
         }
 
-        function subMenu3() {
+        function dataSubMenu2() {
             return {
                 seleccionadoSubMenu3: null,
                 seleccionarSubMenu3(id) {
@@ -139,7 +139,7 @@
             }
         }
 
-        function subMenu4() {
+        function dataSubMenu3() {
             return {
                 seleccionadoSubMenu4: null,
                 seleccionarSubMenu4(id) {
