@@ -22,8 +22,8 @@
              </div>
 
              <!--SubMenu1-->
-             <div :style="seleccionado == {{ $key }} && { display: 'block' }" x-transition class="submenu_1"
-                 x-on:click.away="seleccionadoSubMenu1 = null">
+             <div :style="seleccionado == '{{ $key }}' ? 'display: block;' : 'display: none;'" x-transition
+                 class="submenu_1" x-on:click.away="seleccionadoSubMenu1 = null">
                  @if (count($menu['subMenu1']))
                      @foreach ($menu['subMenu1'] as $keySub1 => $subMenu1)
                          <div x-data="subMenu2" class="elementos_submenu_1">
@@ -42,7 +42,7 @@
                              </div>
 
                              <!--SubMenu2-->
-                             <div :style="seleccionadoSubMenu1 == {{ $keySub1 }} && { display: 'block' }"
+                             <div :style="seleccionadoSubMenu1 == '{{ $keySub1 }}' ? 'display: block;' : 'display: none;'"
                                  x-transition x-on:click.away="seleccionadoSubMenu2 = null" class="submenu_2">
                                  @if (count($subMenu1['subMenu2']))
                                      @foreach ($subMenu1['subMenu2'] as $keySub2 => $subMenu2)
@@ -64,7 +64,8 @@
                                              </div>
 
                                              <!--SubMenu3-->
-                                             <div :style="seleccionadoSubMenu2 == {{ $keySub2 }} && { display: 'block' }"
+                                             <div :style="seleccionadoSubMenu2 == '{{ $keySub2 }}' ? 'display: block;' :
+                                                 'display: none;'"
                                                  x-on:click.away="seleccionadoSubMenu3 = null" x-transition
                                                  class="submenu_3">
                                                  @if (count($subMenu2['subMenu3']))
