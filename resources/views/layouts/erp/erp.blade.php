@@ -24,7 +24,7 @@
     @livewire('erp.menu.menu-principal')
 
     <!--MAIN PÁGINA-->
-    <main>
+    <main class="contenedor_layout_erp">
         @yield('content')
         @if (isset($slot))
             {{ $slot }}

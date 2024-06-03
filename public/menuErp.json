@@ -1,60 +1,45 @@
 [
     {
         "id": 0,
-        "nombrePrincipal": "Roles 1",
-        "nombrePrincipalUrl": "#",
+        "nombrePrincipal": "Inicio",
+        "nombrePrincipalUrl": "erp.inicio",
         "iconoPrincipal": "fa-solid fa-user-gear",
-        "subMenu1": [
-            {
-                "id": 1,
-                "nombreSubMenu1": "Lista 2",
-                "nombreSubMenu1Url": "erp.inicio",
-                "iconoSubMenu1": "fa-solid fa-table-list",
-                "subMenu2": []
-            },
-            {
-                "id": 2,
-                "nombreSubMenu1": "Nuevo 2",
-                "nombreSubMenu1Url": "#",
-                "iconoSubMenu1": "fa-solid fa-square-plus",
-                "subMenu2": [
-                    {
-                        "id": 1,
-                        "nombreSubMenu2": "Lista 3",
-                        "nombreSubMenu2Url": "erp.inicio",
-                        "iconoSubMenu2": "fa-solid fa-table-list",
-                        "subMenu3": []
-                    },
-                    {
-                        "id": 2,
-                        "nombreSubMenu2": "Nuevo 3",
-                        "nombreSubMenu2Url": "erp.inicio",
-                        "iconoSubMenu2": "fa-solid fa-square-plus",
-                        "subMenu3": []
-                    }
-                ]
-            }
-        ]
+        "subMenu1": []
     },
     {
         "id": 1,
-        "nombrePrincipal": "Usuarios",
+        "nombrePrincipal": "Almacén",
         "nombrePrincipalUrl": "#",
         "iconoPrincipal": "fa-solid fa-users",
         "subMenu1": [
             {
                 "id": 1,
-                "nombreSubMenu1": "Lista",
+                "nombreSubMenu1": "Inventario",
                 "nombreSubMenu1Url": "erp.inicio",
                 "iconoSubMenu1": "fa-solid fa-table-list",
                 "subMenu2": []
             },
             {
                 "id": 2,
-                "nombreSubMenu1": "Nuevo",
-                "nombreSubMenu1Url": "erp.inicio",
+                "nombreSubMenu1": "Producto",
+                "nombreSubMenu1Url": "#",
                 "iconoSubMenu1": "fa-solid fa-square-plus",
-                "subMenu2": []
+                "subMenu2": [
+                    {
+                        "id": 1,
+                        "nombreSubMenu2": "Marca",
+                        "nombreSubMenu2Url": "erp.marca.vista.todas",
+                        "iconoSubMenu2": "fa-solid fa-table-list",
+                        "subMenu3": []
+                    },
+                    {
+                        "id": 2,
+                        "nombreSubMenu2": "Color",
+                        "nombreSubMenu2Url": "erp.inicio",
+                        "iconoSubMenu2": "fa-solid fa-square-plus",
+                        "subMenu3": []
+                    }
+                ]
             }
         ]
     },

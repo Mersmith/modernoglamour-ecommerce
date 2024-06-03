@@ -1,0 +1,67 @@
+/*CONTENEDOR CABECERA erp*/
+.contenedor_erp_cabecera {
+    box-shadow: var(--menu-sombra);
+    padding: 10px;
+    background: var(--menu-color-terciario);
+}
+
+/*CONTENEDOR TITULO erp*/
+.contenedor_titulo_erp {
+    display: flex;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--menu-color-primario);
+    padding: 5px 0px;
+}
+
+.contenedor_subtitulo_erp {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--menu-color-primario);
+    padding: 5px 0px;
+}
+
+.contenedor_subtitulo_erp span {
+    display: flex;
+    font-size: 14px;
+    color: var(--menu-color-primario);
+}
+
+/*CONTENEDOR BOTONES erp*/
+.contenedor_botones_erp {
+    display: flex;
+    padding: 1px 0px;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+.contenedor_botones_erp a,
+.contenedor_botones_erp button {
+    padding: 5px 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    color: var(--menu-boton-texto-base);
+}
+
+.contenedor_boton_crear {
+    background: var(--menu-boton-crear-fondo);
+}
+
+.contenedor_boton_editar {
+    background: var(--menu-boton-editar-fondo);
+}
+
+.contenedor_boton_regresar {
+    background: var(--menu-boton-regresar-fondo);
+}
+
+.contenedor_botones_erp a:hover,
+.contenedor_botones_erp button:hover {
+    filter: var(--menu-boton-aclarar);
+}
+
+.contenedor_botones_erp form {
+    display: flex;
+    cursor: pointer;
+}

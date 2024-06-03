@@ -1,0 +1,21 @@
+:root {
+
+    --menu-boton-texto-base: white;
+
+    --menu-boton-aclarar: brightness(1.1);
+
+    --menu-boton-crear-fondo: #319dff;
+
+    --menu-boton-editar-fondo: #10d096;
+
+    --menu-boton-eliminar-fondo: #ff316a;
+
+    --menu-boton-ocultar-fondo: #ffaa04;
+
+    --menu-boton-ver-fondo: #129199;
+
+    --menu-boton-habilitar-fondo: #eef0f4;
+
+    --menu-boton-regresar-fondo: #3b4758;
+
+}

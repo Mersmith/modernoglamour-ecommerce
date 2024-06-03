@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Erp\Marca;
 
+use App\Http\Controllers\Controller;
 use App\Models\Marca;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,12 @@ class MarcaController extends Controller
     public function vistaTodas()
     {
         $marcas = Marca::all();
-        return view('administrador.marca.todas', compact('marcas'));
+        return view('erp.marca.todas', compact('marcas'));
     }
 
     public function vistaCrear()
     {
-        return view('administrador.marca.crear');
+        return view('erp.marca.crear');
     }
 
     public function crear(Request $request)
@@ -31,13 +32,13 @@ class MarcaController extends Controller
     public function vistaVer($id)
     {
         $marca = Marca::find($id);
-        return view('administrador.marca.ver', compact('marca'));
+        return view('erp.marca.ver', compact('marca'));
     }
 
     public function vistaEditar($id)
     {
         $marca = Marca::find($id);
-        return view('administrador.marca.editar', compact('marca'));
+        return view('erp.marca.editar', compact('marca'));
     }
 
     public function editar(Request $request, $id)

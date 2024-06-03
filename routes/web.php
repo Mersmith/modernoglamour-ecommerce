@@ -5,7 +5,6 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\ListaPrecioController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\RequerimientoController;
 use App\Http\Controllers\SubcategoriaController;
@@ -51,15 +50,7 @@ Route::domain('modernoglamour.local')->group(function () {
     });
 });
 
-Route::controller(MarcaController::class)->group(function () {
-    Route::get('marca', 'vistaTodas')->name('marca.vista.todas');
-    Route::get('marca/crear', 'vistaCrear')->name('marca.vista.crear');
-    Route::post('marca/crear', 'crear')->name('marca.crear');
-    Route::get('marca/ver/{id}', 'vistaVer')->name('marca.vista.ver');
-    Route::get('marca/editar/{id}', 'vistaEditar')->name('marca.vista.editar');
-    Route::put('marca/editar/{id}', 'editar')->name('marca.editar');
-    Route::delete('marca/eliminar/{id}', 'eliminar')->name('marca.eliminar');
-});
+
 
 Route::controller(ColorController::class)->group(function () {
     Route::get('color', 'vistaTodas')->name('color.vista.todas');
