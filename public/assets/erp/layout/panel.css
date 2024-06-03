@@ -1,0 +1,16 @@
+/*CONTENEDOR CABECERA erp*/
+.contenedor_erp_panel {
+    box-shadow: var(--menu-sombra);
+    padding: 10px;
+    background: var(--menu-color-terciario);
+}
+
+
+/*ESTILOS PANEL*/
+.contenedor_panel_cuerpo {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+}

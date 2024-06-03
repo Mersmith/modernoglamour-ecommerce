@@ -11,7 +11,9 @@
 <!----------------------ERP---------------------->
 <!--LAYOUT ERP-->
 <link rel="stylesheet" href="{{ asset('assets/erp/layout/layout.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/erp/layout/panel.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/erp/layout/cabecera.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/erp/layout/tabla.css') }}">
 
 <!--MENU PRINCIPAL ERP-->
 <link rel="stylesheet" href="{{ asset('assets/erp/menu/menu-principal.css') }}">
