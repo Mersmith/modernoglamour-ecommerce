@@ -1,0 +1,10 @@
+.contenedor_layout_punto {
+    margin-left: calc(80px + 240px);
+    background-color: rgb(165, 63, 63);
+}
+
+@media (max-width: 900px) {
+    .contenedor_layout_punto {
+        margin-left: 0px;
+    }
+}

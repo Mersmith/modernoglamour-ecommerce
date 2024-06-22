@@ -3,13 +3,13 @@
     --menu-ancho-sidebar: 200px;
     --menu-altura-sidebar-cabecera: 100px;
 
-    --menu-fondo-color-base-logo: #eef0f4;
+    --menu-fondo-color-base-logo: white;
 
     --menu-sombra: 0 5px 10px rgba(0, 0, 0, 0.2);
     
     --menu-color-primario: #eef0f4;
     --menu-color-secundario: #7d8fa9;
-    --menu-color-terciario: #1d232c;
+    --menu-color-terciario: white;
     --menu-color-cuaternario: black;
 
 }

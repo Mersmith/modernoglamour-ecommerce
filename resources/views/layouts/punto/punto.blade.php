@@ -16,6 +16,7 @@
 
     <!-- STYLES -->
     @livewireStyles
+    @include('layouts.punto.components.css')
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     @livewire('punto.menu.menu-principal')
 
     <!--MAIN PÁGINA-->
-    <main>
+    <main class="contenedor_layout_punto">
         @yield('content')
         @if (isset($slot))
             {{ $slot }}
